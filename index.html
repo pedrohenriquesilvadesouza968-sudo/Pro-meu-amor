@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Uma pergunta para você ❤️</title>
+
+    <style>
+
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: pink;
+            padding-top: 100px;
+        }
+
+        h1 {
+            color: #d63384;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .sim {
+            background-color: #ff4d88;
+            color: white;
+        }
+
+        .nao {
+            background-color: #dddddd;
+            color: black;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1 id="titulo">💌 Tenho uma pergunta para você...</h1>
+
+    <button id="botao" onclick="proximaTela()">Continuar ❤️</button>
+
+    <div id="respostas"></div>
+
+
+    <script>
+
+        function proximaTela() {
+
+            document.getElementById("titulo").innerHTML =
+                "💕 Você gosta de mim?";
+
+            document.getElementById("botao").style.display = "none";
+
+            document.getElementById("respostas").innerHTML =
+                '<button class="sim" onclick="respondeuSim()">SIM ❤️</button>' +
+                '<button class="nao" onclick="respondeuNao()">NÃO 😐</button>';
+        }
+
+
+        function respondeuSim() {
+
+            document.getElementById("titulo").innerHTML =
+                "🥰 Eu sabia!";
+
+        }
+
+
+        function respondeuNao() {
+
+            document.getElementById("titulo").innerHTML =
+                "🤨 Tem certeza?";
+
+            document.getElementById("respostas").innerHTML =
+                '<button onclick="temCerteza()">Sim, tenho certeza 😐</button>';
+
+        }
+
+
+        function temCerteza() {
+
+            document.getElementById("titulo").innerHTML =
+                "😭 Pense melhor...";
+
+            document.getElementById("respostas").innerHTML =
+                '<button onclick="ultimaChance()">Continuar 👀</button>';
+
+        }
+
+
+        function ultimaChance() {
+
+            document.getElementById("titulo").innerHTML =
+                "😏 Última chance...";
+
+            document.getElementById("respostas").innerHTML =
+                '<button class="sim" onclick="simFinal()">SIM ❤️</button>' +
+                '<button class="nao" onclick="naoFinal()">AINDA NÃO 😐</button>';
+
+        }
+
+
+        function simFinal() {
+
+            document.getElementById("titulo").innerHTML =
+                "🥰 Sabia que você gostava de mim!";
+
+            document.getElementById("respostas").innerHTML = "";
+
+        }
+
+
+        function naoFinal() {
+
+            document.getElementById("titulo").innerHTML =
+                "👀 Então vamos para a pergunta final...";
+
+            document.getElementById("respostas").innerHTML =
+                '<button onclick="perguntaFinal()">Pode perguntar ❤️</button>';
+
+        }
+
+
+        function perguntaFinal() {
+
+            document.getElementById("titulo").innerHTML =
+                "❤️ VOCÊ ME AMA? ❤️";
+
+            document.getElementById("respostas").innerHTML =
+                '<button class="sim" onclick="amorSim()">SIM ❤️</button>' +
+                '<button id="botaoNao" class="nao" onmouseover="fugir()">NÃO 😭</button>';
+
+        }
+
+
+        function fugir() {
+
+            let botao = document.getElementById("botaoNao");
+
+            botao.style.position = "absolute";
+
+            botao.style.left = Math.random() * 80 + "%";
+
+            botao.style.top = Math.random() * 80 + "%";
+
+        }
+
+
+        function amorSim() {
+
+            document.getElementById("titulo").innerHTML =
+                "🥰 EU TAMBÉM TE AMO! ❤️";
+
+            document.getElementById("respostas").innerHTML = "";
+
+        }
+
+
+        function amorNao() {
+
+            document.getElementById("titulo").innerHTML =
+                "😭 Vou fingir que não vi isso...";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
